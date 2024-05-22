@@ -1,12 +1,14 @@
 package org.exercise;
 
+import java.util.jar.Manifest;
+
 public class RegnoAnimale {
     public static void main(String[] args) {
         //Creo le istanze dei miei animali
-        Animale cane = new Cane();
-        Animale passerotto = new Passerotto();
-        Animale delfino = new Delfino();
-        Animale aquila = new Aquila();
+        Cane cane = new Cane();
+        Passerotto passerotto = new Passerotto();
+        Delfino delfino = new Delfino();
+        Aquila aquila = new Aquila();
 
         //Utilizzo i metodi per l'istanza cane
         cane.dormi();
@@ -27,5 +29,21 @@ public class RegnoAnimale {
         aquila.dormi();
         aquila.verso();
         aquila.mangia();
+
+        System.out.println("*************************************\n Step 2: ");
+
+        //Chiamata dei metodi volare/nuotare
+        faiNuotare(delfino);
+        faiVolare(passerotto);
+        faiVolare(aquila);
+    }
+    //Metodo per far volare un animale che puo' volare
+    public static void faiVolare(IVolante animale) {
+        animale.vola();
+    }
+
+    // Metodo per far nuotare un animale che può nuotare
+    public static void faiNuotare(INuotante animale) {
+        animale.nuota();
     }
 }
